@@ -191,7 +191,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &508451789 stripped
+--- !u!114 &448920278 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3449400320515595510, guid: c703b7cec92526343bab360549d634da, type: 3}
   m_PrefabInstance: {fileID: 2546935404861861841}
@@ -200,17 +200,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &508451790 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2764987564814836489, guid: c703b7cec92526343bab360549d634da, type: 3}
-  m_PrefabInstance: {fileID: 2546935404861861841}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415bfe91231632c42b965fc278f24cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1708593136
@@ -479,11 +468,11 @@ PrefabInstance:
     - target: {fileID: 2349952201254933017, guid: c703b7cec92526343bab360549d634da, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8335621597587986684}
+      objectReference: {fileID: 0}
     - target: {fileID: 2349952201254933017, guid: c703b7cec92526343bab360549d634da, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 8335621597587986686}
+      objectReference: {fileID: 0}
     - target: {fileID: 3449400320515595510, guid: c703b7cec92526343bab360549d634da, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -1154,10 +1143,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 871442907304983337}
-  - component: {fileID: 8335621597587986684}
-  - component: {fileID: 8335621597587986686}
+  - component: {fileID: 8335621597587986687}
   - component: {fileID: 8335621597587986683}
   - component: {fileID: 8335621597587986685}
+  - component: {fileID: 8335621597587986688}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -1192,7 +1181,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8335621597587986684
+--- !u!95 &8335621597587986685
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335621597587986681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 340096c784ebb1e44ac15ac59b44ad23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8335621597587986687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1205,30 +1215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  health: 5
-  healthbar: {fileID: 508451790}
---- !u!95 &8335621597587986685
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8335621597587986681}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f124c312f8231f943b83e3bf4f4d6b81, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8335621597587986686
+  health: 0
+  healthbar: {fileID: 0}
+--- !u!114 &8335621597587986688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1237,10 +1226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8335621597587986681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415bfe91231632c42b965fc278f24cff, type: 3}
+  m_Script: {fileID: 11500000, guid: beb701feed8d5ab4cb3759878d0408e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 508451789}
+  slider: {fileID: 448920278}
 --- !u!1 &8641858156055968805
 GameObject:
   m_ObjectHideFlags: 0
