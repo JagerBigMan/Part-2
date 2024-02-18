@@ -17,6 +17,21 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPosition.z = transform.position.z;
+        }
+
+        Vector2 direction = (targetPosition - transform.position).normalized;
+
+        if (Vector2.Distance(transform.position, targetPosition) > 0.1f)
+        {
+            rb.velocity = direction * moveSpeed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }
