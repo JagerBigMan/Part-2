@@ -68,7 +68,7 @@ public class CharacterController : MonoBehaviour
     void Die()
     {
         Debug.Log("Character has died");
-        SceneManager.LoadScene("GameOverScene"); // Load the game over scene
+        SceneManager.LoadScene("GameOverScene");
     }
 
     void UpdateHealthBar()

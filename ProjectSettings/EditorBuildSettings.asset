@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Assignment/Scenes/Main Menu.unity
     guid: c12929d366f223948ade09b240849ace
   - enabled: 1
-    path: Assets/Assignment/Scenes/Assignment 2.unity
+    path: Assets/Assignment/Scenes/Level 1.unity
     guid: 2fa1ab0de57493f469a4af76c536ce5d
   - enabled: 1
     path: Assets/Assignment/Scenes/Level 2.unity

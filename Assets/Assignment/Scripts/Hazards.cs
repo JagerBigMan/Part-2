@@ -21,9 +21,5 @@ public class Hazard : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Wall"))
-        {
-            Destroy(gameObject); // Destroy the hazard when it collides with a wall
-        }
     }
 }
