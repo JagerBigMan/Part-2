@@ -16,12 +16,20 @@ public class CharacterController : MonoBehaviour
 
     public Slider healthBar;
 
+    private int score = 0;
+    private int highScore = 0;
+
+    public Text scoreText;
+    public Text highScoreText;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
 
         UpdateHealthBar();
+        UpdateScoreText();
+        LoadHighScore();
     }
 
     void Update()
@@ -74,5 +82,42 @@ public class CharacterController : MonoBehaviour
     void UpdateHealthBar()
     {
         healthBar.value = currentHealth;
+    }
+
+    public void CollectCollectible()
+    {
+        score++;
+        UpdateScoreText();
+
+        if (score >= 15)
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
+    }
+
+    void UpdateScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
+
+    void LoadHighScore()
+    {
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = "High Score: " + highScore.ToString();
+    }
+
+    void SaveHighScore()
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+            highScoreText.text = "High Score: " + highScore.ToString();
+        }
+    }
+
+    void OnDestroy()
+    {
+        SaveHighScore();
     }
 }
