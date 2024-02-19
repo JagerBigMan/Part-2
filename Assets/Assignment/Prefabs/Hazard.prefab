@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3229294790085967062}
   - component: {fileID: 6533400999417438655}
-  - component: {fileID: 7627489178944618414}
   - component: {fileID: 7589143942066341668}
   - component: {fileID: 7067538775805926518}
   - component: {fileID: 8711920000129361710}
@@ -88,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7627489178944618414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786671168645245487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb92aba8cb7d73499b813c4c8e3b8f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hazardPrefab: {fileID: 786671168645245487}
-  minX: -5
-  maxX: 5
-  spawnDelay: 1
 --- !u!114 &7589143942066341668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fe0de12f11be44fbbfcbfda35252e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
+  damageAmount: 30
 --- !u!60 &7067538775805926518
 PolygonCollider2D:
   m_ObjectHideFlags: 0

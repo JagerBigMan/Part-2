@@ -2,9 +2,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -69,6 +68,7 @@ public class CharacterController : MonoBehaviour
     void Die()
     {
         Debug.Log("Character has died");
+        SceneManager.LoadScene("GameOverScene"); // Load the game over scene
     }
 
     void UpdateHealthBar()
