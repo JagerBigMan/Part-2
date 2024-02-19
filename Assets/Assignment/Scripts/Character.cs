@@ -2,6 +2,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -11,12 +13,16 @@ public class CharacterController : MonoBehaviour
     private Vector3 targetPosition;
 
     public int maxHealth = 100;
-    private int currentHealth; 
+    private int currentHealth;
+
+    public Slider healthBar;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+
+        UpdateHealthBar();
     }
 
     void Update()
@@ -47,18 +53,26 @@ public class CharacterController : MonoBehaviour
         {
             Die();
         }
+
+        UpdateHealthBar();
     }
 
     public void GainHealth(int healthAmount)
     {
-        currentHealth += healthAmount; // Increase current health by the healthAmount
+        currentHealth += healthAmount;
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-    }
 
+        UpdateHealthBar();
+    }
 
     void Die()
     {
         Debug.Log("Character has died");
+    }
+
+    void UpdateHealthBar()
+    {
+        healthBar.value = currentHealth;
     }
 }
