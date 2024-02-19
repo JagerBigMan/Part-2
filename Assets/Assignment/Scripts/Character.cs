@@ -10,9 +10,13 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 targetPosition;
 
+    public int maxHealth = 100; // Maximum health points for the character
+    private int currentHealth; // Current health points for the character
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth; // Initialize current health to max health
     }
 
     void Update()
@@ -33,5 +37,22 @@ public class CharacterController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount; // Reduce current health by the damage amount
+
+        // Check if current health has dropped to zero or below
+        if (currentHealth <= 0)
+        {
+            Die(); // Call Die function if the character's health reaches zero
+        }
+    }
+
+    void Die()
+    {
+        // Implement death logic here (e.g., play death animation, disable character, etc.)
+        Debug.Log("Character has died");
     }
 }
