@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collectible : MonoBehaviour
 {
@@ -14,11 +15,17 @@ public class Collectible : MonoBehaviour
     public Text scoreText;
     public GameObject victoryScreen;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void Start()
     {
-        if (other.CompareTag("Player"))
+        collectedCount = PlayerPrefs.GetInt("Score", 0);
+        UpdateScoreText();
+    }
+
+    void OnTriggerEnter2D(Collider2D Collectible)
+    {
+        if (Collectible.CompareTag("Player"))
         {
-            CharacterController player = other.GetComponent<CharacterController>();
+            CharacterController player = Collectible.GetComponent<CharacterController>();
 
             if (player != null)
             {
@@ -35,6 +42,9 @@ public class Collectible : MonoBehaviour
     {
         collectedCount += scoreValue;
         UpdateScoreText();
+
+        PlayerPrefs.SetInt("Score", collectedCount);
+        PlayerPrefs.Save();
     }
 
     void UpdateScoreText()
