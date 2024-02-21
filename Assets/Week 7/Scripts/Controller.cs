@@ -4,10 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Controller : MonoBehaviour
 {
     public Slider chargeSlider;
+    public static Score:
     float charge;
     public float maxCharge = 1;
     Vector2 direction;
