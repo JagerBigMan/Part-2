@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Collectible
+  - Goal
   layers:
   - Default
   - TransparentFX
